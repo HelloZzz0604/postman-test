@@ -15,7 +15,7 @@
 						"exec": [
 							"const jsonData = JSON.parse(responseBody);",
 							"",
-							"pm.environment.set(\"token\", jsonData.result.token);"
+							"pm.environment.set(\"tokenkk\", jsonData.result.token);"
 						],
 						"type": "text/javascript"
 					}
