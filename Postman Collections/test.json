@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "4a8b0ab4-83c4-43a3-a39d-77cb6dd853cb",
+		"name": "001",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "60e67d59-2597-4990-831c-02121249e27c",
+						"exec": [
+							"const jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.environment.set(\"token\", jsonData.result.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "f6443cb1-be2d-49aa-ab23-829ca401400c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userLogin",
+							"value": "test1",
+							"type": "text"
+						},
+						{
+							"key": "userPass",
+							"value": "test1234",
+							"type": "text"
+						},
+						{
+							"key": "userNickname",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "usersId",
+							"value": "15",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": "{{url}}/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"_postman_id": "f812b7dc-3b2a-46e6-ba74-9fa384931f06",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/getById?usersId=16",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "usersId",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"_postman_id": "6673d81b-6af2-44f2-95ec-6a009cb54c9f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{url}}/users/refreshToken"
+			},
+			"response": []
+		},
+		{
+			"name": "Get admin info",
+			"_postman_id": "51d6a864-cc41-4cad-bb32-a83fdb33a109",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{url}}/users/info"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"_postman_id": "e942b2ce-c8a9-484a-9f96-facf0fe97e3a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "usersId",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "userNicename",
+							"value": "ttess",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "{{url}}/users/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"_postman_id": "3b4419ef-9823-46cc-82cd-cfadeb80d7a0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userLogin",
+							"value": "test1",
+							"type": "text"
+						},
+						{
+							"key": "userPass",
+							"value": "test1234",
+							"type": "text"
+						},
+						{
+							"key": "userNicename",
+							"value": "test1",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "{{url}}/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "60e67d59-2597-4990-831c-02121249e27c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "5b50945d-f94b-4279-9eed-3fea6ee02099",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userLogin",
+							"value": "test1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPass",
+							"value": "test1234",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userNickname",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "usersId",
+							"value": "15",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": "{{url}}/users/logout"
+			},
+			"response": []
+		}
+	]
+}
