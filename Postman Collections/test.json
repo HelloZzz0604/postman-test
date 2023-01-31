@@ -21,7 +21,7 @@
 					}
 				}
 			],
-			"_postman_id": "f6443cb1-be2d-49aa-ab23-829ca401400c",
+			"id": "f6443cb1-be2d-49aa-ab23-829ca401400c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -66,10 +66,7 @@
 							"type": "text",
 							"disabled": true
 						}
-					],
-					"options": {
-						"urlencoded": {}
-					}
+					]
 				},
 				"url": "{{url}}/users/login"
 			},
@@ -77,7 +74,7 @@
 		},
 		{
 			"name": "Get By Id",
-			"_postman_id": "f812b7dc-3b2a-46e6-ba74-9fa384931f06",
+			"id": "f812b7dc-3b2a-46e6-ba74-9fa384931f06",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -124,7 +121,19 @@
 		},
 		{
 			"name": "Refresh Token",
-			"_postman_id": "6673d81b-6af2-44f2-95ec-6a009cb54c9f",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4641fd59-9dec-4f38-8506-6af5352ed47e",
+						"exec": [
+							"const jsonData = JSON.parse(responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6673d81b-6af2-44f2-95ec-6a009cb54c9f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -156,7 +165,7 @@
 		},
 		{
 			"name": "Get admin info",
-			"_postman_id": "51d6a864-cc41-4cad-bb32-a83fdb33a109",
+			"id": "51d6a864-cc41-4cad-bb32-a83fdb33a109",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -188,7 +197,7 @@
 		},
 		{
 			"name": "Update",
-			"_postman_id": "e942b2ce-c8a9-484a-9f96-facf0fe97e3a",
+			"id": "e942b2ce-c8a9-484a-9f96-facf0fe97e3a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -227,10 +236,7 @@
 							"value": "ttess",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": "{{url}}/users/update"
 			},
@@ -238,7 +244,7 @@
 		},
 		{
 			"name": "Register",
-			"_postman_id": "3b4419ef-9823-46cc-82cd-cfadeb80d7a0",
+			"id": "3b4419ef-9823-46cc-82cd-cfadeb80d7a0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -269,10 +275,7 @@
 							"value": "test1",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": "{{url}}/users/register"
 			},
@@ -292,7 +295,7 @@
 					}
 				}
 			],
-			"_postman_id": "5b50945d-f94b-4279-9eed-3fea6ee02099",
+			"id": "5b50945d-f94b-4279-9eed-3fea6ee02099",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -345,10 +348,7 @@
 							"type": "text",
 							"disabled": true
 						}
-					],
-					"options": {
-						"urlencoded": {}
-					}
+					]
 				},
 				"url": "{{url}}/users/logout"
 			},
